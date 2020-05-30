@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterappforedu/Modals/student.dart';
+import 'package:flutterappforedu/models/student.dart';
 
 class StudentAdd extends StatefulWidget {
 
