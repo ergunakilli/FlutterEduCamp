@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterappforedu/Modals/student.dart';
+import 'package:flutterappforedu/screens/student_add.dart';
 
 void main() => runApp(MyApp());
 
@@ -23,8 +24,8 @@ class HomeScreen extends StatefulWidget{
 class _HomeScreenState extends State {
   List<Student> students = [
     Student.withId(1,"Ergun", "Akilli", 10),
-    Student.withId(2,"Ayşe", "Akilli", 90),
-    Student.withId(3,"Açelya", "Akilli", 98)
+    Student.withId(2,"Ayşe", "Ak", 45),
+    Student.withId(3,"Açelya", "Yıldız", 98)
   ];
 
   Student selectedStudent = Student.withId(0, "", "", 0);
@@ -80,7 +81,7 @@ class _HomeScreenState extends State {
                   ],
                 ),
                   onPressed: (){
-                  print("Yeni öğrenci");
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => StudentAdd(students)));
                   },
               )
             ),
@@ -88,11 +89,11 @@ class _HomeScreenState extends State {
                 fit: FlexFit.tight,
                 flex: 2,
                 child: RaisedButton(
-                  color: Colors.greenAccent,
+                  color: Colors.black12,
                   child: Row(
                     children: <Widget>[
-                      Icon(Icons.add),
-                      SizedBox(width: 5.0,),
+                      Icon(Icons.update),
+                      SizedBox(width: 4.0,),
                       Text("Güncelle")
                     ],
                   ),
@@ -105,11 +106,11 @@ class _HomeScreenState extends State {
                 fit: FlexFit.tight,
                 flex: 2,
                 child: RaisedButton(
-                  color: Colors.greenAccent,
+                  color: Colors.amberAccent,
                   child: Row(
                     children: <Widget>[
-                      Icon(Icons.add),
-                      SizedBox(width: 5.0,),
+                      Icon(Icons.delete),
+                      SizedBox(width: 4.0,),
                       Text("Sil")
                     ],
                   ),
